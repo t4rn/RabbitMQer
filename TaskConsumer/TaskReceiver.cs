@@ -33,7 +33,7 @@ namespace TaskConsumer
                     consumer.Received += Consumer_Received;
 
                     channel.BasicConsume(queue: queueName,
-                                         noAck: false,// waits for acknowledgment that message is done processing
+                                         noAck: false,// waits for acknowledgment that message is done processing -> RabbitMQ will redeliver the message when the consumer dies
                                          consumer: consumer);
 
                     Console.WriteLine("Press [enter] to exit.");
