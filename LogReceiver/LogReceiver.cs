@@ -24,7 +24,7 @@ namespace LogReceiver
                     string queueName = channel.QueueDeclare().QueueName;
 
                     channel.QueueBind(queue: queueName,
-                                      exchange: "logs",
+                                      exchange: exchangeName,
                                       routingKey: "");
 
                     Console.WriteLine("[*] Waiting for logs.");
